@@ -3,11 +3,11 @@ import styled from "styled-components"
 const Todopage = () => {
   return (
     <Tododiv>
-        <Imgdiv>
+        <Imgdiv id="imgdive">
         <Inpich1>Thur 9</Inpich1>
         <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
-        <Inputtypetex type="text" placeholder="Note" maxLength={30}/>
+        <Inputtypetex id="typeTxt" type="text" placeholder="Note" maxLength={30}/>
         <Sbutton><Butspan>+</Butspan></Sbutton>
     </Tododiv>
   )

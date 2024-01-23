@@ -25,14 +25,14 @@ const Tododiv = styled.div `
     }
 `
 const Imgdiv = styled.div`
-    background-image: url(/src/public/robotPick.jpg);
+    background-image: url(/src/public/robotPick.jpg.jpg);
     background-repeat: no-repeat;
     width: 360px;
     height: 200px;
     border-radius: 10px;
 
     @media (width>1440px){
-        background-image: url(/src/public/secPick.jpg);
+        background-image: url(/src/public/secPick.jpg.jpg);
         background-repeat: no-repeat;
         width: 600px;
         height: 250px;
@@ -85,7 +85,7 @@ const Inputtypetex = styled.input `
     border: none;
     margin-left: 15px;
     margin-top: 23px;
-    background-image: url(/src/public/justCyrcle.svg);
+    background-image: url(/src/public/justCyrcle.svg.svg);
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: 25px;

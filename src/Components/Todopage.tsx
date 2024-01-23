@@ -2,16 +2,43 @@ import styled from "styled-components"
 import carieliwre from '../public/sayYes.svg'
 import robotpic from '../public/robotPick.jpg'
 import secpick from '../public/secPick.jpg'
+import { useState } from "react"
+import nagavi from '../public/garbageBox.svg'
+import empty from '../public/carieliWre.svg'
 
 const Todopage = () => {
+    const [todoList,setTodoList] = useState([])
+    const [newTask,setNewTask] = useState('')
+
+    const hanleChange:any = (e:any) => {
+        setNewTask(e.target.value)
+    }
+
+    const addTask = () => {
+        const newTodoList:any = [...todoList,newTask]
+        setTodoList(newTodoList)
+    }
+
   return (
     <Tododiv>
         <Imgdiv id="imgdive">
         <Inpich1>Thur 9</Inpich1>
         <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
-        <Inputtypetex id="typeTxt" type="text" placeholder="Note" maxLength={30}/>
-        <Sbutton><Butspan>+</Butspan></Sbutton>
+        <div>
+        <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={30}/>
+        <Sbutton onClick={addTask}><Butspan>+</Butspan></Sbutton>
+        </div>
+        <div className="list">
+            {todoList.map((task:any,index:any) => {
+                const unicKey = `${task.id}-${index}-`
+            return <div className="" key={unicKey}>
+                    <h1 className="listIN" key={index}>{task}</h1>
+                    <img src={nagavi}></img>
+                    <img src={empty}></img>
+                </div>
+            })}
+        </div>
     </Tododiv>
   )
 }
@@ -20,10 +47,10 @@ export default Todopage
 
 const Tododiv = styled.div `
     width: 100%;
-    height: 700px;
+    height: 100%;
     background-color: #fff;
     border-radius:10px;
-    margin-bottom: 100px;
+    margin-bottom:100px;
 
     @media (width>1440px){
         margin-top:20px ;
@@ -86,7 +113,7 @@ const Inputtypetex = styled.input `
     gap: 10px;
     flex: 1 0 0;
     align-self: stretch;
-    background: #EEE;
+    background: black;
     border-radius: 5px;
     outline: none;
     border: none;
@@ -116,6 +143,7 @@ const Sbutton = styled.button `
     align-self: stretch;
     margin-left: 280px;
     margin-top: 23px;
+    position: absolute;
     border-radius: 5px;
     background: #20EEB0;
     border: none;

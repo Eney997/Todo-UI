@@ -25,18 +25,23 @@ const Todopage = () => {
         <Inpich1>Thur 9</Inpich1>
         <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
-        <div>
-        <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={30}/>
+        <InpandButtDiv>
+        <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={20}></Inputtypetex>
         <Sbutton onClick={addTask}><Butspan>+</Butspan></Sbutton>
-        </div>
+        </InpandButtDiv>
         <div className="list">
             {todoList.map((task:any,index:any) => {
                 const unicKey = `${task.id}-${index}-`
-            return <div className="" key={unicKey}>
-                    <h1 className="listIN" key={index}>{task}</h1>
-                    <img src={nagavi}></img>
-                    <img src={empty}></img>
-                </div>
+            return <Listdiv key={unicKey}>
+                        <ZedaorisDiv>
+                        <Listdivone className="listIN" key={index}>{task}</Listdivone>
+                        <Ldivsec>Today at 8:00 PM</Ldivsec>
+                        </ZedaorisDiv>
+                        <IsorifotoDiv>
+                        <EmptIMG src={empty}></EmptIMG>
+                        <Grb src={nagavi}></Grb>
+                        </IsorifotoDiv>
+                   </Listdiv>
             })}
         </div>
     </Tododiv>
@@ -50,7 +55,7 @@ const Tododiv = styled.div `
     height: 100%;
     background-color: #fff;
     border-radius:10px;
-    margin-bottom:100px;
+    margin-bottom: 100px;
 
     @media (width>1440px){
         margin-top:20px ;
@@ -107,7 +112,7 @@ const Inpickh2 = styled.h2 `
 `
 const Inputtypetex = styled.input `
     display: flex;
-    width: 250px;
+    width: 100px;
     height: 40px;
     align-items: center;
     gap: 10px;
@@ -117,19 +122,16 @@ const Inputtypetex = styled.input `
     border-radius: 5px;
     outline: none;
     border: none;
-    margin-left: 15px;
-    margin-top: 23px;
     background-image: url(${carieliwre});
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: 4%;
     text-align:bottom 0px;padding-left:45px;
-    position: absolute;
     color: #888;
 
 @media (width>1440px){
     width: 420px;
-    margin-left: 40px;
+    text-align:bottom 0px;padding-left:55px;
 }
 `
 const Sbutton = styled.button `
@@ -141,9 +143,6 @@ const Sbutton = styled.button `
     gap: 11px;
     flex-shrink: 0;
     align-self: stretch;
-    margin-left: 280px;
-    margin-top: 23px;
-    position: absolute;
     border-radius: 5px;
     background: #20EEB0;
     border: none;
@@ -151,17 +150,68 @@ const Sbutton = styled.button `
     cursor: pointer;
 
     @media (width>1440px){
-        margin-left: 490px;
         height: 40px;
-        margin-top: 23px;
     }
 `
 const Butspan = styled.span `
     font-size: 15px;
     color: #FFF;
+    margin-top: -5px;
 
     @media (width>1440px){
         font-size: 25px;
-        margin-top: -5px;
+        
+    }
+`
+const InpandButtDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+    gap: 10px;
+`
+const Listdiv = styled.div `
+    display: grid;
+    grid-template-areas:'one two';
+`
+const Listdivone = styled.h1 `
+    color: #000000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 25px;
+    @media (width>1440px){
+    margin-left: 100px;
+    }
+`
+const ZedaorisDiv = styled.div`
+    grid-area:one;
+`
+
+const IsorifotoDiv = styled.div`
+    grid-area:two;
+`
+const EmptIMG = styled.img `
+    cursor: pointer;
+    margin-left: 10px;
+`
+const Grb = styled.img `
+    cursor: pointer;
+    margin-left: 5px;
+`
+const Ldivsec = styled.h2`
+    color: #888;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 25px;
+    margin-bottom: 20px;
+
+@media (width>1440px){
+    margin-left: 100px;
     }
 `

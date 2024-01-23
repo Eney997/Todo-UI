@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import carieliwre from '../public/carieliWre.svg'
+import carieliwre from '../public/sayYes.svg'
 import robotpic from '../public/robotPick.jpg'
 import secpick from '../public/secPick.jpg'
 

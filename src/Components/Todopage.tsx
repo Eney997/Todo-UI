@@ -25,14 +25,14 @@ const Tododiv = styled.div `
     }
 `
 const Imgdiv = styled.div`
-    background-image: url(./src/public/robot.jpg);
+    background-image: url(./src/public/robotPick.jpg);
     background-repeat: no-repeat;
     width: 360px;
     height: 200px;
     border-radius: 10px;
 
     @media (width>1440px){
-        background-image: url(./src/public/secpick.jpg);
+        background-image: url(./src/public/secPick.jpg);
         background-repeat: no-repeat;
         width: 600px;
         height: 250px;

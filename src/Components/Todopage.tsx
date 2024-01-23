@@ -1,7 +1,7 @@
 import styled from "styled-components"
+import carieliwre from '../public/carieliWre.svg'
 import robotpic from '../public/robotPick.jpg'
 import secpick from '../public/secPick.jpg'
-import carieliwre from '../public/carieliWre.svg'
 
 const Todopage = () => {
   return (
@@ -103,10 +103,6 @@ const Inputtypetex = styled.input `
 @media (width>1440px){
     width: 420px;
     margin-left: 40px;
-    background-image: url(${carieliwre});
-    background-repeat: no-repeat;
-    background-size: 25px;
-    background-position: 4%;
 }
 `
 const Sbutton = styled.button `

@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import robotpic from '../public/robotPick.jpg'
 import secpick from '../public/secPick.jpg'
-import justcrcl from '../public/justCyrcle.svg'
+import emptycrcl from '../public/justCyrcle.svg'
+
 const Todopage = () => {
   return (
     <Tododiv>
@@ -87,12 +88,11 @@ const Inputtypetex = styled.input `
     border: none;
     margin-left: 15px;
     margin-top: 23px;
-    background-image: url(${justcrcl});
+    background-image: url(${emptycrcl});
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: 4%;
-    margin-bottom: 200px;
     text-align:bottom 0px;padding-left:45px;
     position: absolute;
     ::placeholder {
@@ -107,6 +107,11 @@ const Inputtypetex = styled.input `
 @media (width>1440px){
     width: 420px;
     margin-left: 40px;
+    background-image: url(${emptycrcl});
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 4%;
 }
 `
 const Sbutton = styled.button `

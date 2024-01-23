@@ -1,5 +1,7 @@
 import styled from "styled-components"
-
+import robotpic from '../public/robotPick.jpg'
+import secpick from '../public/secPick.jpg'
+import justcrcl from '../public/justCyrcle.svg'
 const Todopage = () => {
   return (
     <Tododiv>
@@ -25,14 +27,14 @@ const Tododiv = styled.div `
     }
 `
 const Imgdiv = styled.div`
-    background-image: url(/src/public/robotPick.jpg);
+    background-image: url(${robotpic});
     background-repeat: no-repeat;
     width: 360px;
     height: 200px;
     border-radius: 10px;
 
     @media (width>1440px){
-        background-image: url(/src/public/secPick.jpg);
+        background-image: url(${secpick});
         background-repeat: no-repeat;
         width: 600px;
         height: 250px;
@@ -85,7 +87,7 @@ const Inputtypetex = styled.input `
     border: none;
     margin-left: 15px;
     margin-top: 23px;
-    background-image: url(/src/public/justCyrcle.svg);
+    background-image: url(${justcrcl});
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: 25px;

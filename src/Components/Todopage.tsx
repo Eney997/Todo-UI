@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import robotpic from '../public/robotPick.jpg'
 import secpick from '../public/secPick.jpg'
-import emptycrcl from '../public/justCyrcle.svg'
+import carieliwre from '../public/carieliWre.svg'
 
 const Todopage = () => {
   return (
@@ -23,6 +23,8 @@ const Tododiv = styled.div `
     height: 700px;
     background-color: #fff;
     border-radius:10px;
+    margin-bottom: 100px;
+
     @media (width>1440px){
         margin-top:20px ;
     }
@@ -52,6 +54,7 @@ const Inpich1 = styled.h1`
     margin-left: 320px;
     margin-top: 144px;
     position: absolute;
+
     @media (width>1440px){
         font-size: 15px;
         margin-left: 534px;
@@ -68,6 +71,7 @@ const Inpickh2 = styled.h2 `
     position: absolute;
     margin-top: 161px;
     margin-left: 287px;
+
     @media (width>1440px){
         font-size: 25px;
         margin-left: 480px;
@@ -88,27 +92,18 @@ const Inputtypetex = styled.input `
     border: none;
     margin-left: 15px;
     margin-top: 23px;
-    background-image: url(${emptycrcl});
-    cursor: pointer;
+    background-image: url(${carieliwre});
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: 4%;
     text-align:bottom 0px;padding-left:45px;
     position: absolute;
-    ::placeholder {
-    width: 38px;
     color: #888;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+
 @media (width>1440px){
     width: 420px;
     margin-left: 40px;
-    background-image: url(${emptycrcl});
-    cursor: pointer;
+    background-image: url(${carieliwre});
     background-repeat: no-repeat;
     background-size: 25px;
     background-position: 4%;
@@ -124,12 +119,13 @@ const Sbutton = styled.button `
     flex-shrink: 0;
     align-self: stretch;
     margin-left: 280px;
-    margin-top: 25px;
+    margin-top: 23px;
     border-radius: 5px;
     background: #20EEB0;
     border: none;
     outline: none;
     cursor: pointer;
+
     @media (width>1440px){
         margin-left: 490px;
         height: 40px;
@@ -139,4 +135,9 @@ const Sbutton = styled.button `
 const Butspan = styled.span `
     font-size: 15px;
     color: #FFF;
+
+    @media (width>1440px){
+        font-size: 25px;
+        margin-top: -5px;
+    }
 `

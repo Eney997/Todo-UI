@@ -27,6 +27,12 @@ const Todopage = () => {
         setTodoList(todoList.filter((task) => task !== taskName))
     }
 
+    const handleKeyPress = (e:any) => {
+        if (e.key === 'Enter') {
+          addTask();
+        }
+      }
+
   return (
     <Tododiv>
         <Imgdiv id="imgdive">
@@ -34,8 +40,7 @@ const Todopage = () => {
         <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
         <InpandButtDiv>
-            <Errorh className="">Please Add Todo</Errorh>
-        <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={11}></Inputtypetex>
+        <Inputtypetex onKeyPress={handleKeyPress} onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={11}></Inputtypetex>
         <Sbutton onClick={addTask}><Butspan>+</Butspan></Sbutton>
         </InpandButtDiv>
         <div className="list">
@@ -59,18 +64,6 @@ const Todopage = () => {
 
 export default Todopage
 
-const Errorh = styled.h5 `
-    color:red;
-    font-size: 10px;
-    position: absolute;
-    margin-top:-60px;
-    margin-left: 100px;
-    display: none;
-
-    @media (width>1440px){
-        margin-left: 330px;
-    }
-`
 const Tododiv = styled.div `
     width: 100%;
     height: 100%;
@@ -209,6 +202,7 @@ const Listdivone = styled.h1 `
 `
 const ZedaorisDiv = styled.div`
     grid-area:one;
+    margin-left: 40px;
 `
 
 const IsorifotoDiv = styled.div`

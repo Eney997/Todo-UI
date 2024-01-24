@@ -15,8 +15,16 @@ const Todopage = () => {
     }
 
     const addTask = () => {
+        if (newTask === "") {
+        console.error("Task cannot be empty");
+        return;
+        }
         const newTodoList:any = [...todoList,newTask]
         setTodoList(newTodoList)
+    }
+
+    const deleteTask = (taskName:any) => {
+        setTodoList(todoList.filter((task) => task !== taskName))
     }
 
   return (
@@ -26,7 +34,8 @@ const Todopage = () => {
         <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
         <InpandButtDiv>
-        <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={20}></Inputtypetex>
+            <Errorh>Please Add Todo</Errorh>
+        <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={11}></Inputtypetex>
         <Sbutton onClick={addTask}><Butspan>+</Butspan></Sbutton>
         </InpandButtDiv>
         <div className="list">
@@ -39,7 +48,7 @@ const Todopage = () => {
                         </ZedaorisDiv>
                         <IsorifotoDiv>
                         <EmptIMG src={empty}></EmptIMG>
-                        <Grb src={nagavi}></Grb>
+                        <Grb onClick={() => deleteTask(task)} src={nagavi}></Grb>
                         </IsorifotoDiv>
                    </Listdiv>
             })}
@@ -50,6 +59,18 @@ const Todopage = () => {
 
 export default Todopage
 
+const Errorh = styled.h5 `
+    color:red;
+    font-size: 10px;
+    position: absolute;
+    margin-top:-60px;
+    margin-left: 100px;
+    display: none;
+
+    @media (width>1440px){
+        margin-left: 330px;
+    }
+`
 const Tododiv = styled.div `
     width: 100%;
     height: 100%;

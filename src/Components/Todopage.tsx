@@ -34,7 +34,7 @@ const Todopage = () => {
         <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
         <InpandButtDiv>
-            <Errorh>Please Add Todo</Errorh>
+            <Errorh className="">Please Add Todo</Errorh>
         <Inputtypetex onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={11}></Inputtypetex>
         <Sbutton onClick={addTask}><Butspan>+</Butspan></Sbutton>
         </InpandButtDiv>

@@ -20,6 +20,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     display: grid;
     place-items: center;
-    background: #EEE;
+    background: #000000;
 }
 `;

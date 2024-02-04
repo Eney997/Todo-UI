@@ -4,7 +4,7 @@ import robotpic from '../public/robotPick.jpg'
 import secpick from '../public/secPick.jpg'
 import { useState } from "react"
 import nagavi from '../public/garbageBox.svg'
-import empty from '../public/carieliWre.svg'
+
 
 const Todopage = () => {
     const [todoList,setTodoList] = useState([])
@@ -36,11 +36,9 @@ const Todopage = () => {
   return (
     <Tododiv>
         <Imgdiv id="imgdive">
-        <Inpich1>Thur 9</Inpich1>
-        <Inpickh2>6:23 AM</Inpickh2>
         </Imgdiv>
         <InpandButtDiv>
-        <Inputtypetex onKeyPress={handleKeyPress} onChange={hanleChange} id="typeTxt" type="text" placeholder="Note" maxLength={11}></Inputtypetex>
+        <Inputtypetex onKeyPress={handleKeyPress} onChange={hanleChange} id="typeTxt" type="text" placeholder="Enter Your Todo" maxLength={11}></Inputtypetex>
         <Sbutton onClick={addTask}><Butspan>+</Butspan></Sbutton>
         </InpandButtDiv>
         <div className="list">
@@ -49,10 +47,8 @@ const Todopage = () => {
             return <Listdiv key={unicKey}>
                         <ZedaorisDiv>
                         <Listdivone className="listIN" key={index}>{task}</Listdivone>
-                        <Ldivsec>Today at 8:00 PM</Ldivsec>
                         </ZedaorisDiv>
                         <IsorifotoDiv>
-                        <EmptIMG src={empty}></EmptIMG>
                         <Grb onClick={() => deleteTask(task)} src={nagavi}></Grb>
                         </IsorifotoDiv>
                    </Listdiv>
@@ -67,7 +63,7 @@ export default Todopage
 const Tododiv = styled.div `
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius:10px;
     margin-bottom: 100px;
 
@@ -90,40 +86,6 @@ const Imgdiv = styled.div`
         border-radius: 10px;
     }
 `
-const Inpich1 = styled.h1`
-    color: #FFF;
-    font-family: Inter;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 320px;
-    margin-top: 144px;
-    position: absolute;
-
-    @media (width>1440px){
-        font-size: 15px;
-        margin-left: 534px;
-        margin-top:180px ;
-    }
-`
-const Inpickh2 = styled.h2 `
-    color: #FFF;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    position: absolute;
-    margin-top: 161px;
-    margin-left: 287px;
-
-    @media (width>1440px){
-        font-size: 25px;
-        margin-left: 480px;
-        margin-top: 200px;
-    }
-`
 const Inputtypetex = styled.input `
     display: flex;
     width: 100px;
@@ -142,6 +104,7 @@ const Inputtypetex = styled.input `
     background-position: 4%;
     text-align:bottom 0px;padding-left:45px;
     color: #888;
+    margin-bottom: 30px;
 
 @media (width>1440px){
     width: 420px;
@@ -151,6 +114,7 @@ const Inputtypetex = styled.input `
 const Sbutton = styled.button `
     display: flex;
     width: 55px;
+    height: 40px;
     padding: 10px;
     justify-content: center;
     align-items: center;
@@ -208,25 +172,8 @@ const ZedaorisDiv = styled.div`
 const IsorifotoDiv = styled.div`
     grid-area:two;
 `
-const EmptIMG = styled.img `
-    cursor: pointer;
-    margin-left: 10px;
-`
+
 const Grb = styled.img `
     cursor: pointer;
     margin-left: 5px;
-`
-const Ldivsec = styled.h2`
-    color: #888;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 25px;
-    margin-bottom: 20px;
-
-@media (width>1440px){
-    margin-left: 100px;
-    }
 `
